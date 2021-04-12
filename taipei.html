@@ -18,19 +18,29 @@ request.send();
 request.onload = function() {
 	var taipeitxt = request.response;
 	var taipei = JSON.parse(taipeitxt);
-	showdistrict(taipei);
+	pullDistrict(taipei);
 }	
 
 	
-var txt=''
-function showdistrict(jsonObj) {
+var txt='', i, district
+function pullDistrict(jsonObj) {
+	txt += "<select id='myselect'>";
 	for(i = 0; i < jsonObj.length; i++) {
-	txt += jsonObj[i]["鄉鎮市區名稱"]
+		txt += "<option>" + jsonObj[i]["鄉鎮市區名稱"];
 	}
+	txt += "</select>"
 	document.getElementById('demo').innerHTML = txt;
 }    
 
 
+
+
+</script>
+
+
+<meta charset="UTF-8"></meta>
+</body>
+</html>
 
 </script>
 
