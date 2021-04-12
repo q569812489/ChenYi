@@ -9,14 +9,7 @@
 
 <script>
 
-var requestURL = "https://q569812489.github.io/ChenYi/taipei.json";
-var request = new XMLHttpRequest();
-request.open('GET', requestURL);
-request.respenseType = 'json';
-request.send();
-request.onload = function() {
-	var taipei = request.response;
-}
+
 
 var txt
 function showdistrict(jsonObj) {
@@ -26,7 +19,15 @@ function showdistrict(jsonObj) {
 	document.getElementById('demo').innerHTML = txt;
 	    
 
-	
+var requestURL = "https://q569812489.github.io/ChenYi/taipei.json";
+var request = new XMLHttpRequest();
+request.open('GET', requestURL);
+request.respenseType = 'json';
+request.send();
+request.onload = function() {
+	var taipei = request.response;
+	showdistrict(taipei);
+}	
 	   
 
 </script>
