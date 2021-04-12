@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+
+<p id="demo"></p>
+<p id='demo1'></p>
+
+<script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+<script src="./taipei.json"></script>
+
+<script>
+
+var myObj, x, txt= "";
+
+txt += "<select id='myselect' onchange='wtf(this);'>"
+for (x in myObj) {
+    console.log(myObj[x].district[0].name);
+	txt += "<option>" + myObj[x].location;
+}
+txt += "</select>"
+document.getElementById('demo').innerHTML = txt;
+
+function wtf(n){
+    for(var i=0;i<myObj.length;i++){
+        if(myObj[i].location == n.value){
+            txt1 = "<select id='myselect1' onchange='ChenE(this.value)'>"
+            for(var j=0;j<myObj[i].district.length;j++)
+                txt1 += "<option>" + myObj[i].district[j].name;
+            txt1 += "</select>"
+            console.log(txt1);
+            document.getElementById('demo1').innerHTML = txt1;
+            break;
+        }
+    }
+}
+function ChenE(n){
+    console.log(n);
+    // do something...
+}
+</script>
+
+
+<meta charset="UTF-8"></meta>
+</body>
+</html>
