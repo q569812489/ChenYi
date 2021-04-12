@@ -8,29 +8,19 @@
 <p id='demo1'></p>
 
 <script>
-
-var requestURL = "https://q569812489.github.io/ChenYi/taipei.json";
-var request = new XMLHttpRequest();
-request.open('GET', requestURL);
-request.responseType = 'text';
-request.send();
-
-request.onload = function() {
-	var taipeitxt = request.response;
-	var taipei = JSON.parse(taipeitxt);
-	showdistrict(taipei);
-}	
-
-var txt
-function showdistrict(jsonObj) {
-	for(i = 0; i < jsonObj.length; i++) {
-	txt += jsonObj[i]["鄉鎮市區名稱"]
-	}
-	document.getElementById('demo').innerHTML = txt;
-}    
-
-
+	
+function httpGet(theUrl)
+{
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+    xmlHttp.send( null );
+    return xmlHttp.responseText;
+}
+var taipeiTxt = httpGet("https://q569812489.github.io/ChenYi/taipei.json")
+var taipei = JSON.parse(taipeiTxt)
 	   
+
+
 
 </script>
 
