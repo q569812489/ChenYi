@@ -12,6 +12,16 @@
 
 <script>
 
+function httpGet(theUrl)
+{
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+    xmlHttp.send( null );
+    return xmlHttp.responseText;
+}
+j = httpGet("https://q569812489.github.io/ChenYi/taipei.json
+")
+j
 var myObj, x, txt= "";
 
 txt += "<select id='myselect' onchange='wtf(this);'>"
