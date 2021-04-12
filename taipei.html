@@ -24,8 +24,10 @@ var request = new XMLHttpRequest();
 request.open('GET', requestURL);
 request.responseType = 'json';
 request.send();
+
 request.onload = function() {
-	var taipei = request.response;
+	var taipeitxt = request.response;
+	var taipei = JSON.parse(taipeitxt);
 	showdistrict(taipei);
 }	
 	   
@@ -33,6 +35,5 @@ request.onload = function() {
 </script>
 
 
-<meta charset="UTF-8"></meta>
 </body>
 </html>
