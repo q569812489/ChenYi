@@ -22,7 +22,7 @@ function showdistrict(jsonObj) {
 var requestURL = "https://q569812489.github.io/ChenYi/taipei.json";
 var request = new XMLHttpRequest();
 request.open('GET', requestURL);
-request.respenseType = 'json';
+request.responseType = 'json';
 request.send();
 request.onload = function() {
 	var taipei = request.response;
