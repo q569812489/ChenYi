@@ -9,45 +9,26 @@
 
 <script>
 
-function httpGet(theUrl)
-{
-    var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
-    xmlHttp.send( null );
-    return xmlHttp.responseText;
+var requestURL = "https://q569812489.github.io/ChenYi/taipei.json";
+var request = new XMLHttpRequest();
+request.open('GET', requestURL);
+request.respenseType = 'json';
+request.send();
+request.onload = function() {
+	var taipei = request.response;
 }
-j = httpGet("https://q569812489.github.io/ChenYi/taipei.json")
-j = JSON.parse(j)
-	    
-	    
-	    
-var myObj, x, txt= "";
 
-txt += "<select id='myselect' onchange='wtf(this);'>"
-for (x in myObj) {
-    console.log(myObj[x].district[0].name);
-	txt += "<option>" + myObj[x].location;
-}
-txt += "</select>"
-document.getElementById('demo').innerHTML = txt;
+var txt
+function showdistrict(jsonObj) {
+	for(i = 0; i < jsonObj.length; i++) {
+	txt += jsonObj[i]["鄉鎮市區名稱"]
+	}
+	document.getElementById('demo').innerHTML = txt;
+	    
 
-function wtf(n){
-    for(var i=0;i<myObj.length;i++){
-        if(myObj[i].location == n.value){
-            txt1 = "<select id='myselect1' onchange='ChenE(this.value)'>"
-            for(var j=0;j<myObj[i].district.length;j++)
-                txt1 += "<option>" + myObj[i].district[j].name;
-            txt1 += "</select>"
-            console.log(txt1);
-            document.getElementById('demo1').innerHTML = txt1;
-            break;
-        }
-    }
-}
-function ChenE(n){
-    console.log(n);
-    // do something...
-}
+	
+	   
+
 </script>
 
 
