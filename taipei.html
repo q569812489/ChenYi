@@ -9,16 +9,6 @@
 
 <script>
 
-
-
-var txt
-function showdistrict(jsonObj) {
-	for(i = 0; i < jsonObj.length; i++) {
-	txt += jsonObj[i]["鄉鎮市區名稱"]
-	}
-	document.getElementById('demo').innerHTML = txt;
-}    
-
 var requestURL = "https://q569812489.github.io/ChenYi/taipei.json";
 var request = new XMLHttpRequest();
 request.open('GET', requestURL);
@@ -30,6 +20,16 @@ request.onload = function() {
 	var taipei = JSON.parse(taipeitxt);
 	showdistrict(taipei);
 }	
+
+var txt
+function showdistrict(jsonObj) {
+	for(i = 0; i < jsonObj.length; i++) {
+	txt += jsonObj[i]["鄉鎮市區名稱"]
+	}
+	document.getElementById('demo').innerHTML = txt;
+}    
+
+
 	   
 
 </script>
