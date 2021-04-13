@@ -22,7 +22,7 @@ request.onload = function() {
 }	
 
 	
-var txt='', i, district
+var txt='', i
 function pullDistrict(jsonObj) {
 	txt += "<select id='myselect', onchange='pullVillage(this)'>";
 	for(i = 0; i < jsonObj.length; i++) {
@@ -32,10 +32,10 @@ function pullDistrict(jsonObj) {
 	document.getElementById('demo').innerHTML = txt;
 }
 	
-var txt1='', i1, i2, village
+var txt1='', i1, i2
 function pullVillage(districtName) {
 		for (i1 = 0; i1 < taipei.length; i1++) {
-			if(taipei[i]['鄉鎮市區名稱'] == districtName.value {
+			if(taipei[i1]['鄉鎮市區名稱'] == districtName.value {
 			   txt1 += "<select id='myselect1', onchange='table(this)'>"
 			   for (i2 = 0; taipei[i1]['里'].length; i2++) {
 				txt1 += "<option>" + taipei[i1]['里'][i2]['村里名稱'];					 
