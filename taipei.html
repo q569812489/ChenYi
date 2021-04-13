@@ -22,15 +22,15 @@ var jTxt = '', j = ''
 jTxt = httpGet("https://q569812489.github.io/ChenYi/taipei.json");
 j = JSON.parse(jTxt);
 	
-pullDistrict(j);
+pullDistrict();
 
 	
 var txt='', i
-function pullDistrict(jsonObj) {
+function pullDistrict() {
 	txt += "<select id='myselect', onchange='pullVillage(this)'>";
-	for(i = 0; i < jsonObj.length; i++) {
-		console.log(jsonObj[i]['鄉鎮市區名稱']);
-		txt += "<option>" + jsonObj[i]["鄉鎮市區名稱"];
+	for(i = 0; i < j.length; i++) {
+		console.log(j[i]['鄉鎮市區名稱']);
+		txt += "<option>" + j[i]["鄉鎮市區名稱"];
 	}
 	txt += "</select>"
 	document.getElementById('demo').innerHTML = txt;
