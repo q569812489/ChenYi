@@ -50,7 +50,6 @@ function pullVillage(districtName) {
 			   document.getElementById('demo1').innerHTML = txt1;
 				
 				console.log(j[i1]['里'])
-				return j[i1]['里']
 			   }
 		
 
@@ -65,7 +64,7 @@ function pullVillage(districtName) {
 
 var txt2 = ''
 function villData(villName, districtName) {
-	txt2 = districtName;
+	txt2 = districtName + villName.value;
 	document.getElementById('demo2').innerHTML = txt2;
 
 }
