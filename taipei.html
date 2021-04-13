@@ -24,7 +24,7 @@ jTxt = httpGet("https://q569812489.github.io/ChenYi/taipei.json");
 j = JSON.parse(jTxt);
 	
 pullDistrict();
-
+districtGet(districtName);
 	
 var txt='', i
 function pullDistrict() {
@@ -38,12 +38,10 @@ function pullDistrict() {
 	document.getElementById('demo').innerHTML = txt;
 }
 	
-var txt1='', i1, i2, villArray
+var txt1='', i1, i2
 function pullVillage(districtName) {
 		for (i1 = 0; i1 < j.length; i1++) {
 			if(j[i1]['鄉鎮市區名稱'] == districtName.value) {
-			villArray = j[i1]['里'];
-			console.log(villArray);
 			   txt1 += "<select id='myselect1', onchange='table(this)'>";
 			   txt1 += "<option>" + '請選擇一個里';
 			   for (i2 = 0; i2 < j[i1]['里'].length; i2++) {
@@ -52,19 +50,23 @@ function pullVillage(districtName) {
 			   txt1 += "</select>"
 			   document.getElementById('demo1').innerHTML = txt1;
 			   }
-			return villArray
+
 	}
 	
 
 
 }
 	
+function districtGet(districtName) {
+		      for (i3 = 0; i3 < j.length; i++) {
+				if(j[i3]['鄉鎮市區名稱'] == districtName.value {
+				   console.log(j[i3]['里'])
+				   return j[i3]['里']}
 
-function table(villName) {
+}
+		      }
 	
 
-
-}	
 
 
 
