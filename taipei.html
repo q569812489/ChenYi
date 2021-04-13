@@ -39,8 +39,7 @@ function pullDistrict() {
 	
 var txt1='', i1, i2
 function pullVillage(districtName) {
-		console.log(districtName.value)
-		for (i1 = 0; i1 < j.length; i1++) {
+	for (i1 = 0; i1 < j.length; i1++) {
 			if(j[i1]['鄉鎮市區名稱'] == districtName.value) {
 			   txt1 += "<select id='myselect1', onchange='table(this)'>";
 			   txt1 += "<option>" + '請選擇一個里';
@@ -49,9 +48,15 @@ function pullVillage(districtName) {
 				}
 			   txt1 += "</select>"
 			   document.getElementById('demo1').innerHTML = txt1;
+				
+				console.log(j[i1]['里'])
 			   }
+		
 
 	}
+	
+		console.log(districtName.value)
+		
 	
 
 
