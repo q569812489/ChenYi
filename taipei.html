@@ -41,7 +41,7 @@ var txt1='', i1, i2
 function pullVillage(districtName) {
 		for (i1 = 0; i1 < j.length; i1++) {
 			if(j[i1]['鄉鎮市區名稱'] == districtName.value) {
-			   console.log(j[i1]['鄉鎮市區名稱'])
+			   console.log(j[i1]['里'])
 			   txt1 += "<select id='myselect1', onchange='table(this)'>"
 			   for (i2 = 0; i2 < j[i1]['里'].length; i2++) {
 				txt1 += "<option>" + j[i1]['里'][i2]["村里名稱"];					 
