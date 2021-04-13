@@ -15,16 +15,16 @@ request.open('GET', requestURL);
 request.responseType = 'text';
 request.send();
 
-request.onload = function() {
+request.onload = function taipei() {
 	var taipeitxt = request.response;
-	var taipei = JSON.parse(taipeitxt);
+	return var taipei = JSON.parse(taipeitxt);
 	pullDistrict(taipei);;
 }	
 
 	
 var txt='', i
 function pullDistrict(jsonObj) {
-	txt += "<select id='myselect', onchange='pullVillage(jsonObj, this)'>";
+	txt += "<select id='myselect', onchange='pullVillage(this)'>";
 	for(i = 0; i < jsonObj.length; i++) {
 		txt += "<option>" + jsonObj[i]["鄉鎮市區名稱"];
 	}
@@ -33,12 +33,12 @@ function pullDistrict(jsonObj) {
 }
 	
 var txt1='', i1, i2
-function pullVillage(jsonObj, districtName) {
-		for (i1 = 0; i1 < jsonObj.length; i1++) {
-			if(jsonObj[i1]['鄉鎮市區名稱'] == districtName.value) {
+function pullVillage(districtName) {
+		for (i1 = 0; i1 < taipei().length; i1++) {
+			if(taipei()[i1]['鄉鎮市區名稱'] == districtName.value) {
 			   txt1 += "<select id='myselect1', onchange='table(this)'>"
-			   for (i2 = 0; jsonObj[i1]['里'].length; i2++) {
-				txt1 += "<option>" + jsonObj[i1]['里'][i2]['村里名稱'];					 
+			   for (i2 = 0; taipei()[i1]['里'].length; i2++) {
+				txt1 += "<option>" + taipei()[i1]['里'][i2]['村里名稱'];					 
 				}
 			   txt1 += "</select>"
 			   document.getElementById('demo1').innerHTML = txt1;
