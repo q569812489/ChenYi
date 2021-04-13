@@ -3,8 +3,9 @@
 <body>
 
 
-
+<p>選取想要尋找的行政區</p>
 <p id="demo"></p>
+<p>選取想要尋找的里</p>
 <p id='demo1'></p>
 
 <script>
@@ -18,10 +19,10 @@ function httpGet(theUrl)
 }
 	
 var jTxt = '', j = ''
-jTxt = httpGet("https://q569812489.github.io/ChenYi/taipei.json")
-j = JSON.parse(jTxt)
+jTxt = httpGet("https://q569812489.github.io/ChenYi/taipei.json");
+j = JSON.parse(jTxt);
 	
-pullDistrict(j)
+pullDistrict(j);
 
 	
 var txt='', i
