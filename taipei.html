@@ -38,7 +38,7 @@ function pullVillage(districtName) {
 		for (i1 = 0; i1 < taipei.length; i1++) {
 			if(taipei[i1]['鄉鎮市區名稱'] == districtName.value) {
 			   txt1 += "<select id='myselect1', onchange='table(this)'>"
-			   for (i2 = 0; taipei[i1]['里'].length; i2++) {
+			   for (i2 = 0; i2 < taipei[i1]['里'].length; i2++) {
 				txt1 += "<option>" + taipei[i1]['里'][i2]["鄉鎮市區名稱"];					 
 				}
 			   txt1 += "</select>"
