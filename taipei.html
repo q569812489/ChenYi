@@ -24,13 +24,21 @@ request.onload = function() {
 	
 var txt='', i, district
 function pullDistrict(jsonObj) {
-	txt += "<select id='myselect'>";
+	txt += "<select id='myselect', onchange='pullVillage(this)'>";
 	for(i = 0; i < jsonObj.length; i++) {
+		console.log(jsonObj[i]['里];
 		txt += "<option>" + jsonObj[i]["鄉鎮市區名稱"];
 	}
 	txt += "</select>"
 	document.getElementById('demo').innerHTML = txt;
-}    
+}
+	
+var txt1, i1, village
+function pullVillage(districtSelect) {
+	for (
+
+
+}
 
 
 
