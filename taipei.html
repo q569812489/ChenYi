@@ -27,7 +27,7 @@ var txt='', i
 function pullDistrict(jsonObj) {
 	txt += "<select id='myselect', onchange='pullVillage(this)'>";
 	for(i = 0; i < jsonObj.length; i++) {
-		console.log(jsonObj[i]['鄉鎮市區名稱'];
+		console.log(jsonObj[i]['鄉鎮市區名稱']);
 		txt += "<option>" + jsonObj[i]["鄉鎮市區名稱"];
 	}
 	txt += "</select>"
