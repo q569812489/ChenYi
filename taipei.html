@@ -16,6 +16,8 @@ function httpGet(theUrl)
     xmlHttp.send( null );
     return xmlHttp.responseText;
 }
+	
+var jTxt, j
 jTxt = httpGet("https://q569812489.github.io/ChenYi/taipei.json")
 j = JSON.parse(jTxt)
 	
