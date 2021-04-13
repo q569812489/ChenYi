@@ -18,7 +18,8 @@ request.send();
 request.onload = function() {
 	var taipeitxt = request.response;
 	var taipei = JSON.parse(taipeitxt);
-	pullDistrict(taipei);;
+	pullDistrict(taipei);
+	pullVillage(jsonObj, districtName);
 }	
 
 	
