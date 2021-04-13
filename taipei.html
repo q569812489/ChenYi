@@ -29,7 +29,7 @@ pullDistrict();
 var txt='', i
 function pullDistrict() {
 	txt += "<select id='myselect', onchange='pullVillage(this)'>";
-	txt += <option>請選擇一個行政區</option>
+	txt += "<option>" + '請選擇一個行政區'
 	for(i = 0; i < j.length; i++) {
 		console.log(j[i]['鄉鎮市區名稱']);
 		txt += "<option>" + j[i]["鄉鎮市區名稱"];
