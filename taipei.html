@@ -17,7 +17,8 @@ request.send();
 
 request.onload = function taipei() {
 	var taipeitxt = request.response;
-	return var taipei = JSON.parse(taipeitxt);
+	var taipei = JSON.parse(taipeitxt);
+	return taipei;
 	pullDistrict(taipei);;
 }	
 
